@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosidades</title>
+</head>
+<style>
+    body {
+        background-color: rgb(36, 40, 43);
+    }
+
+    
+
+    input { 
+        background-color:rgb(255, 255, 255);
+        max-width: 500px;
+	    margin: 10px auto 12px auto;
+	    border: 1px solid rgba(0,0,0,.1);
+	    padding: 20px;
+	    box-shadow: 0 15px 18px -5px rgba(0,0,0,.2);
+        border-radius: 15px;
+        position: center;
+    }
+
+    #buscar{
+        margin-left: 2%;
+        padding:15px;
+        border-radius: 10px;
+
+    }
+
+    #searchbar{
+     margin-left: 5%;
+     padding:15px;
+     border-radius: 10px;
+    
+   }
+
+
+
+   input[type=text] {
+      width: 30%;
+      -webkit-transition: width 0.15s ease-in-out;
+      transition: width 0.15s ease-in-out;
+
+   }
+
+   input[type=text]:focus {
+     width: 70%;
+   }
+
+   #list{
+    font-size:  1.5em;
+    margin-left: 90px;
+   }
+
+   .cientistas{
+   display: list-item;    
+  } 
+
+  h2 {
+	font-size: 2em;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: rgb(51, 166, 233);
+}
+
+p {
+	margin-bottom: 1em;
+	font-size: 0.875em;
+	line-height: 1.3;
+	font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+}
+
+div{
+	max-width: 500px;
+	margin: 60px auto 120px auto;
+	border: 1px solid rgba(0,0,0,.1);
+	padding: 20px;
+	box-shadow: 0 5px 8px -5px rgba(0,0,0,.2);
+}
+
+h1 {
+
+max-width: 1200px;
+text-align: center;
+margin: 60px auto;
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: rgb(51, 166, 233);
+font-size: 30px;
+
+}
+
+address {
+    text-align: center;
+    margin-bottom: 2em;
+    line-height: 1em;
+    font-size:15px;
+    color:rgb(51, 166, 233)
+}
+
+a {
+    color:rgb(51, 166, 233);
+}
+
+
+
+</style>
+
+<script>
+
+        function search_cientistas() {
+        let input = document.getElementById('searchbar').value
+            input=input.toLowerCase();
+        let x = document.getElementsByClassName('cientistas');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";                 
+        }
+    }
+}
+    var texto = "Seja bem-vindo! Aqui você poderá encontrar grandes cientistas. Caso queira encntrar um centista espcífico basta colocar o nome do cientista que queira encontrar na barra acima :) Boa leitura!";
+var result;
+
+var count = 0;
+function digitar() {
+  result = document.getElementById("h1");
+  window.setTimeout(function() { inserir(texto[count]) }, 50);
+}
+
+function inserir(letra) {
+  result.innerHTML += letra;
+  count++;
+  if(count < texto.length)
+    window.setTimeout(function() { inserir(texto[count]) }, 50);
+}
+
+window.onload = digitar;
+    
+
+
+
+</script>
+
+<input id="searchbar" type="text"  autocomplete="off"  name="search"  placeholder="Proucure cientistas...">
+
+<button type="submit" onclick="search_cientistas()" id="buscar" >PESQUISAR</button>
+
+    <h1 id="h1"></h1>
+
+<ordered list>
+    <li class="cientistas">
+        <div id="tesla" >
+        <h2> Nikola Tesla</h2>
+        <p>Foi um inventor, engenheiro eletrotécnico e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada (CA)</p>
+        <p>Nascido e criado no Império Austríaco, Tesla estudou engenharia e física na década de 1870 sem se formar, e ganhou experiência prática no início da década de 1880 trabalhando em telefonia e na Continental Edison, na nova indústria de energia elétrica.</p>
+        <p> Com a ajuda de parceiros para financiar e comercializar suas ideias, Tesla montou laboratórios e empresas em Nova Iorque para desenvolver uma variedade de dispositivos elétricos e mecânicos. </p>
+        <p>Seu motor de indução de corrente alternada e patentes relacionadas ao sistema polifásico, licenciadas pela Westinghouse Electric em 1888, lhe renderam uma quantia considerável de dinheiro e se tornaram a pedra angular do sistema polifásico que a empresa acabou comercializando.</p>
+        <p>Tesla experimentou uma série de invenções nas décadas de 1910 e 1920 com graus variados de sucesso. Tendo gasto a maior parte de seu dinheiro, Tesla morava em uma série de hotéis de Nova Iorque, deixando para trás contas não pagas. Ele morreu na cidade de Nova Iorque em janeiro de 1943.O trabalho de Tesla caiu em relativa obscuridade após sua morte, até 1960, quando a Conferência Geral de Pesos e Medidas nomeou a unidade SI de densidade de fluxo magnético como tesla em sua homenagem.</p>
+    </div>
+</li>
+    
+    <li class="cientistas">
+        <div id="einstein">
+        <h2> Albert Einstein </h2>
+        <p>Embora mais conhecido por sua fórmula de equivalência massa-energia, E = mc² — que foi chamada de "a equação mais famosa do mundo" —, foi laureado com o Prêmio Nobel de Física de 1921 "por suas contribuições à física teórica" e, especialmente, por sua descoberta da lei do efeito fotoelétrico, que foi fundamental no estabelecimento da teoria quântica</p>
+        <p>Nascido em uma família de judeus alemães, mudou-se para a Suíça ainda jovem e iniciou seus estudos na Escola Politécnica de Zurique. Após dois anos procurando emprego, obteve um cargo no escritório de patentes suíço enquanto ingressava no curso de doutorado da Universidade de Zurique. Em 1905, publicou uma série de artigos acadêmicos revolucionários. Uma de suas obras era o desenvolvimento da teoria da relatividade especial.</p>
+        <p> Percebeu, no entanto, que o princípio da relatividade também poderia ser estendido para campos gravitacionais, e com a sua posterior teoria da gravitação, de 1916, publicou um artigo sobre a teoria da relatividade geral. Enquanto acumulava cargos em universidades e instituições, continuou a lidar com problemas da mecânica estatística e teoria quântica, o que levou às suas explicações sobre a teoria das partículas e o movimento browniano.</p>
+        <p>Realizou diversas viagens ao redor do mundo, deu palestras públicas em conceituadas universidades e conheceu personalidades célebres de sua época, tanto na ciência quanto fora do mundo acadêmico. Publicou mais de 300 trabalhos científicos, juntamente com mais de 150 obras não científicas. Suas grandes conquistas intelectuais e originalidade fizeram da palavra "Einstein" sinônimo de gênio. Em 1999, foi eleito por 100 físicos renomados o mais memorável físico de todos os tempos.</p>
+    </div>
+</li>
+    
+    <li class="cientistas">        
+        <div id="hawking">
+        <h2> Stephen Hawking </h2>
+        <p> Doutor em cosmologia, foi professor lucasiano emérito na Universidade de Cambridge, um posto que foi ocupado por Isaac Newton, Paul Dirac e Charles Babbage. Foi, pouco antes de falecer, diretor de pesquisa do Departamento de Matemática Aplicada e Física Teórica (DAMTP) e fundador do Centro de Cosmologia Teórica (CTC) da Universidade de Cambridge</p>
+        <p>Seus trabalhos científicos incluem um teorema sobre a singularidade gravitacional no âmbito da relatividade geral (em colaboração com Roger Penrose) e a previsão teórica de que os buracos negros emitem radiação, frequentemente chamada de Radiação Hawking. Hawking foi o primeiro cientista a estabelecer uma teoria da cosmologia explicada pela união da teoria geral da relatividade e da mecânica quântica. Ele foi um defensor fervoroso da interpretação de muitos mundos na mecânica quântica.</p>
+        <p>Em 1963, Hawking foi diagnosticado com uma forma de início precoce da doença neuronal motora (MND; também conhecida como esclerose lateral amiotrófica "ALS" ou doença de Lou Gehrig) que o paralisou gradualmente ao longo das décadas.Mesmo após a perda de sua capacidade de falar, ele ainda era capaz de se comunicar por meio de um dispositivo gerador de fala, inicialmente através do uso de um interruptor de mão e, mais tarde, usando um único músculo da bochecha. Ele morreu no dia 14 de março de 2018, aos 76 anos de idade, depois de lutar contra essa doença durante mais de 50 anos.</p>
+    </div>
+</li>
+    
+    <li class="cientistas"> 
+        <div id="steve">
+        <h2> Steve Jobs </h2>
+        <p>Foi um inventor, empresário e magnata americano no setor da informática. Notabilizou-se como co-fundador, presidente e diretor executivo da Apple Inc. e por revolucionar seis indústrias: computadores pessoais, filmes de animação, música, telefones, tablets e publicações digitais. Além de sua ligação com a Apple, foi diretor executivo da empresa de animação por computação gráfica Pixar e acionista individual máximo da The Walt Disney Company.Morreu no dia 5 de outubro de 2011, aos 56 anos de idade, devido a um câncer pancreático.</p>
+        <p>No final da década de 70, Jobs, em parceria com Steve Wozniak e Mike Markkula, entre outros, desenvolveu e comercializou uma das primeiras linhas de computadores pessoais de sucesso, a série Apple II.</p>
+        <p>Após perder uma disputa de poder com a mesa diretora em 1985, Jobs foi demitido da Apple e fundou a NeXT, uma companhia de desenvolvimento de plataformas direcionadas aos mercados de educação superior e administração. A compra da NeXT pela Apple em 1996 levou Jobs de volta à companhia que ele ajudara a fundar, sendo então seu CEO de 1997 a 2011, ano em que anunciou sua renúncia ao cargo, recomendando Tim Cook como sucessor.</p>
+    </div>
+</li>
+    
+    <li class="cientistas">       
+        <div id="marie">
+        <h2>Marie Curie</h2>
+        <p>Foi uma física e química polonesa naturalizada francesa, que conduziu pesquisas pioneiras sobre radioatividade. Ela foi a primeira mulher a ganhar o Prêmio Nobel, sendo também a primeira pessoa e a única mulher a ganhá-lo duas vezes, além de ser a única pessoa a ser premiada em dois campos científicos diferentes. Ela teve papel fundamental no legado da família Curie, de cinco prêmios Nobel. Ela também foi a primeira mulher a se tornar professora na Universidade de Paris e, em 1995, se tornou a primeira mulher a ser sepultada por seus próprios méritos no Panteão de Paris.</p>
+        <p>Nascida em Varsóvia, no que era então o Reino da Polônia, parte do Império Russo, ela estudou na clandestina Universidade Volante de Varsóvia e iniciou seu treinamento científico prático na mesma cidade. Em 1891, aos 24 anos, seguiu sua irmã mais velha, Bronisława, para estudar em Paris, onde obteve seus diplomas superiores e conduziu seus trabalhos científicos subsequentes. Ela compartilhou o Prêmio Nobel de Física de 1903 com seu marido, Pierre Curie, e com o físico Henri Becquerel. Ela também ganhou o Prêmio Nobel de Química de 1911.</p>
+        <p>Suas realizações incluem o desenvolvimento da teoria da "radioatividade", técnicas para isolar isótopos radioativos e a descoberta de dois elementos químicos, o polônio e o rádio. Sob sua direção, foram conduzidos os primeiros estudos para o tratamento de neoplasias usando isótopos radioativos. Ela fundou o Instituto Curie em Paris e sua contraparte em Varsóvia, que continuam sendo grandes centros de pesquisa médica. Durante a Primeira Guerra Mundial, ela desenvolveu unidades de radiografia móvel para fornecer serviços de raio-X a hospitais de campanha.</p>
+    </div>
+</li>
+
+<address>
+    todas as informaçõs são do site: <a href="https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal">wikipedia.org</a>.<br>
+    Intagram: <a href="https://www.instagram.com/ares_hihi/">ares_hihi</a>.<br>
+    @Ana Elisa<br>
+</address>
+
+<body>
+
+    
+</body>
+</html>
